@@ -8,7 +8,7 @@ const corsAnywhere = require('cors-anywhere')
 
 const swaggerDocument = YAML.load(process.argv[2]);
 const PORT = process.env.PORT || 3001;
-const origin = `localhost:${PORT}`
+const origin = `http://localhost:${PORT}`
 
 let proxy = corsAnywhere.createServer({
   originWhitelist: [origin], // Allow all origins
