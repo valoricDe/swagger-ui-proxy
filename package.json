@@ -2,7 +2,7 @@
   "name": "swagger-ui-proxy",
   "version": "1.0.0",
   "description": "",
-  "main": "cli.js",
+  "main": "bin/swagger-ui-proxy.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
