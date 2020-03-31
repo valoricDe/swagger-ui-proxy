@@ -22,14 +22,14 @@ app.get('/proxy/:proxyUrl*', (req, res) => {
   proxy.emit('request', req, res);
 });
 
-app.use(swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}`)
 
   if(process.argv.indexOf('--open')) {
     const { exec } = require("child_process");
-    exec(`open ${origin}`, (error, stdout, stderr) => {
+    exec(`open ${origin}/api-docs`, (error, stdout, stderr) => {
       if (error) {
         console.log(`error: ${error.message}`);
         return;
